@@ -1,0 +1,61 @@
+package videojuego;
+
+public class TableroCampaña {
+    public static final String ANSI_RED = "\u001B[31m";        //Color rojo
+    public static final String ANSI_YELLOW = "\u001B[33m";     //Color Amarillo
+    public static final String ANSI_GREEN = "\u001B[32m";      //Color Verde
+    public static final String ANSI_BLUE = "\u001B[34m";       //Color Cyan
+    public static final String ANSI_RESET = "\u001B[0m";       //Reiniciar color
+    private static final Unidad[][] Tablero = new Unidad[8][5];//TABLERO      
+
+    //Devuelve el tablero
+    public static Unidad[][] getTablero() {
+        return Tablero;
+    }
+    //Mostrar MAPA
+    public static void mostrarMapa() {
+        String formato = "       |";
+        String[] letras = {"A", "B", "C", "D", "E"};
+
+        System.out.println(ANSI_RESET + "\n\t\t\tTABLERO" +
+                "\n _______________________________________________");
+        formato();
+        System.out.print("\n|       |");
+        for (String j : letras)
+            System.out.print("   " + j + "   |");
+        formato1();
+        for (int i = 0; i < Tablero.length; i++) {
+            System.out.println();
+            formato();
+            if (i < 8)
+                System.out.print("\n|   " + (i + 1) + "   |");
+            else
+                System.out.print("\n|  " + (i + 1) + "   |");
+            for (int j = 0; j < 5; j++) {
+                if (Tablero[i][j] != null )
+                    System.out.print("   " + ANSI_RED + "AA" + ANSI_RESET + "  |");
+                else if (Tablero[i][j] != null)
+                    System.out.print("   " + ANSI_BLUE + "EE" + ANSI_RESET + "  |");
+                else
+                    System.out.print(formato);
+            }
+            formato1();
+        }
+
+        System.out.println("\n\nEnemigos: " + ANSI_RED + "Rojo" + ANSI_RESET);
+        System.out.println("Jugador: " + ANSI_BLUE + "Azul" + ANSI_RESET);
+    }
+    private static void formato() {
+        String formato = "       |";
+        System.out.print("|");
+        for (int j = 0; j < 6; j++)
+            System.out.print(formato);
+    }
+    private static void formato1() {
+        String formato = "_______|";
+        System.out.print("\n|");
+        for (int k = 0; k < 6; k++)
+            System.out.print(formato);
+    }
+    
+}
