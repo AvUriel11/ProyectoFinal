@@ -1,0 +1,25 @@
+package videojuego;
+
+public class Brujo extends Unidad{
+
+    public Brujo(int vida, int defensa, int ataque, boolean estado) {
+        super(vida, defensa, ataque, estado);
+    }
+    public void hechizo(){
+        
+    }
+    public void envenenar(Unidad enemigo){
+        enemigo.setEstado(true);
+    }
+    public void curar(){
+        this.setVida(this.getVida()+((int)(Math.random() * 4 + 3))); //curar de 3-6
+    }
+    public void estudiar(){
+        int newAtaque;
+        newAtaque=this.getAtaque()+1;
+        this.setAtaque(newAtaque);
+        //ShowMessage Aprobo el curso +1 de ataque
+        //ShowMessage Adquirio nuevos saberes +1 de ataque
+        //ShowMessage Demostro superioridad intelectual +1 de ataque
+    }
+}
