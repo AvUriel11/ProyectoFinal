@@ -1,0 +1,34 @@
+package videojuego;
+
+public class Bufon extends Unidad{
+
+    public Bufon(int vida, int defensa, int ataque, boolean estado) {
+        super(vida, defensa, ataque, estado);
+    }
+    public void broma (){
+        //Show message Cual es el ultimo animal que subio a la arca de Noe?
+            //El del-fin
+        //Show message Si se muere una pulga a donde va?
+            //Al pulga-torio
+        //Show message Si los zombies se deshacen con el tiempo?
+            //Zombiodegradables?         
+    }
+    public void humorNegro(){
+        //Show message Contaste un chiste de humor negro, te funaron. 
+            //Procedes a morir.
+        //Show message Contaste un chiste de humor negro. 
+            //Procedes a morir.
+        this.setVida(0);
+    }
+    public void saludar(){
+        //Show message
+    }
+    public void cortejar(Unidad enemigo){
+        enemigo.setVida(enemigo.getVida()+1);
+        //Show message Le lanzas un piropo al enemigo, se siente halagado
+            //El enemigo recupero +1 de salud
+        //Show message Cortejas al enemigo, se siente mejor consigo mismo
+            //El enemigo tiene la autoestima alta +1 de salud
+    }
+    
+}
