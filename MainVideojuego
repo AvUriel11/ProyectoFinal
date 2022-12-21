@@ -1,0 +1,52 @@
+package videojuego;
+//Videojuego Estrategia por turnos
+import java.util.*;
+public class Videojuego {
+    static int intentos=0;
+    public static final String ANSI_GREEN = "\u001B[320m";         //Color Verde
+    public static void main(String[] args) {
+        Scanner entrada=new Scanner(System.in);
+        String opcion;
+        
+        
+        do{
+            //Menu();
+            int flechas=(int) (Math.random() * 5 + 1);
+            //System.out.println("cortes"+flechas);
+            TableroCampaña.mostrarMapa();
+            //TableroJcJ.mostrarMapa();
+            
+            System.out.println(ANSI_GREEN+"Desea volver a intentar? Yes/No");
+            opcion=entrada.next();
+        }
+        while(opcion.equals("yes")|| opcion.equals("YES")|| opcion.equals("Yes")
+           || opcion.equals("si")|| opcion.equals("SI")|| opcion.equals("Si"));
+    }
+    public static void Menu(){
+        Scanner entrada=new Scanner(System.in);
+        int menuOpcion;
+        
+        System.out.println("Elija una opcion: ");
+        System.out.println("__________________");
+        System.out.println("|   Tutorial  | 1 |");
+        System.out.println("|_____________|___|");
+        System.out.println("|   Campaña   | 2 |");
+        System.out.println("|_____________|___|");
+        System.out.println("|   Partida   | 3 |");
+        System.out.println("|Personalizada|   |");
+        System.out.println("|_____________|___|");
+        
+        System.out.print("Ingrese su opcion: ");        
+        menuOpcion=entrada.nextInt();
+
+        if(menuOpcion != 1 && menuOpcion != 2 && menuOpcion != 3){
+            System.out.println("No existe esa opcion vuelva a intentar");
+            intentos++;            
+            if(intentos == 5){
+                System.out.println("Intentos maximos alcanzados finalizando Programa");
+                System.exit(0);
+            }
+            Menu();
+        }
+    }
+}
