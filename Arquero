@@ -1,0 +1,34 @@
+package videojuego;
+
+public class Arquero extends Unidad {
+    private int numFlechas;
+    
+    public Arquero(int numFlechas, int vida, int defensa, int ataque, boolean estado) {
+        super(vida, defensa, ataque, estado);
+        this.numFlechas = (int) (Math.random() * 4 + 5); //flechas cantidad aleatoria (5-8)
+    }
+    public void disparar(){
+        if (this.numFlechas > 0) {   //Cantidad en el carcaj
+            this.numFlechas--;   
+        }
+        else System.out.println("No quedan flechas");   //Flechas = 0
+    }
+    public void fabricarFlechas(){
+        numFlechas=numFlechas+((int) (Math.random() * 2 + 3)); //Mas flechas 3-4
+    }
+    public void flechaPesada(){
+        int newAtaque;
+        int aux;
+        aux=this.getAtaque();//NIvel de Ataque anterior
+        newAtaque=this.getAtaque()+ this.getAtaque()+(this.getAtaque()/2);
+        this.setAtaque(newAtaque);
+    }
+    public void aumentarAtaque(){
+        int newAtaque;
+        newAtaque=this.getAtaque()+1;
+        this.setAtaque(newAtaque);
+        //ShowMessage Adquirio puntas de flecha Afiladas +1 de ataque
+        //ShowMessage Adquirio puntas de flecha de Obsidiana +1 de ataque
+        //ShowMessage Adquirio flechas mejores +1 de ataque
+    }
+}
