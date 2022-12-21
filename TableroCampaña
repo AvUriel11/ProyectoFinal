@@ -1,17 +1,21 @@
 package videojuego;
 
+import java.util.*;
+
 public class TableroCampaña {
     public static final String ANSI_RED = "\u001B[31m";        //Color rojo
     public static final String ANSI_YELLOW = "\u001B[33m";     //Color Amarillo
     public static final String ANSI_GREEN = "\u001B[32m";      //Color Verde
     public static final String ANSI_BLUE = "\u001B[34m";       //Color Cyan
     public static final String ANSI_RESET = "\u001B[0m";       //Reiniciar color
-    private static final Unidad[][] Tablero = new Unidad[8][5];//TABLERO      
-
+    private static final Unidad[][] Tablero = new Unidad[6][5];//TABLERO      
+    
     //Devuelve el tablero
     public static Unidad[][] getTablero() {
         return Tablero;
     }
+    
+    public static ArrayList<Unidad> ejercito = new ArrayList<>(); //Ejército
     //Mostrar MAPA
     public static void mostrarMapa() {
         String formato = "       |";
@@ -32,11 +36,9 @@ public class TableroCampaña {
             else
                 System.out.print("\n|  " + (i + 1) + "   |");
             for (int j = 0; j < 5; j++) {
-                if (Tablero[i][j] != null )
-                    System.out.print("   " + ANSI_RED + "AA" + ANSI_RESET + "  |");
-                else if (Tablero[i][j] != null)
-                    System.out.print("   " + ANSI_BLUE + "EE" + ANSI_RESET + "  |");
-                else
+                if (Tablero[i][j] != null ){
+                    System.out.print("   " + ANSI_RED + "X" + ANSI_RESET + "   |");
+                }else
                     System.out.print(formato);
             }
             formato1();
