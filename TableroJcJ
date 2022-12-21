@@ -9,6 +9,7 @@ public class TableroJcJ {
     public static Unidad[][] getTablero() {
         return Tablero;
     }
+    
     //Mostrar MAPA
     public static void mostrarMapa() {
         String formato = "       |";
@@ -30,7 +31,7 @@ public class TableroJcJ {
                 System.out.print("\n|  " + (i + 1) + "   |");
             for (int j = 0; j < 5; j++) {
                 if (Tablero[i][j] != null )
-                    System.out.print("   " + ANSI_RED + "AA" + ANSI_RESET + "  |");
+                    System.out.print("   " + ANSI_RED + "X" + ANSI_RESET + "  |");
                 else if (Tablero[i][j] != null)
                     System.out.print("   " + ANSI_BLUE + "EE" + ANSI_RESET + "  |");
                 else
