@@ -1,0 +1,29 @@
+package videojuego;
+
+public class Espadachin extends Unidad {
+
+    public Espadachin(int vida, int defensa, int ataque, boolean estado) {
+        super(vida, defensa, ataque, estado);
+    }
+    public void tajo(){
+        //Ataca
+    }
+    public void auraCaballero(){
+        //defEnemiga--
+    }
+    public void corteMultiple(){
+        int newAtaque;
+        int cantCortes;
+        
+        newAtaque=this.getAtaque()/3;
+        cantCortes=(int)(Math.random() * 5 + 1);
+    }
+    public void aumentarAtaque(){
+        int newAtaque;
+        newAtaque=this.getAtaque()+1;
+        this.setAtaque(newAtaque);
+        //ShowMessage Afilando espada +1 de ataque
+        //ShowMessage Se limpia el oxido de la espada +1 de ataque
+        //ShowMessage Fue iluminado +1 de ataque
+    }
+}
