@@ -1,0 +1,37 @@
+package videojuego;
+
+public class Escudero extends Unidad{
+
+    public Escudero(int vida, int defensa, int ataque, boolean estado) {
+        super(vida, defensa, ataque, estado);
+    }
+    public void embestida (){
+    
+    }
+    public void cargaEscudo (){
+        int newAtaque;
+        int aux;
+        aux=this.getAtaque();//Ataque anterior
+        newAtaque=this.getAtaque()+ this.getAtaque()+(this.getAtaque()/2);
+        this.setAtaque(newAtaque);
+    }
+    public void Egida (){
+        int moneda;
+        int newDefensa;
+        int aux; 
+        moneda=(int)(Math.random() * 2 + 1);
+        
+        if(moneda==1){
+            aux=this.getDefensa();//Defensa anterior
+            newDefensa=20;
+            this.setDefensa(newDefensa);
+        }
+    }
+    public void reforzarEscudo(){
+        int newDefensa;
+        newDefensa=this.getDefensa()+1;
+        this.setDefensa(newDefensa);
+        //ShowMessage Escudo pulido +1 de Defensa
+        //ShowMessage Adquiriste un Nuevo escudo +1 de Defensa
+    }
+}
