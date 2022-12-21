@@ -1,0 +1,48 @@
+package videojuego;
+
+public class Unidad{
+    private int vida;
+    private int defensa;
+    private int ataque;
+    private boolean estado=false;
+    
+    
+    public Unidad(int vida, int defensa, int ataque, boolean estado){  //Constructor con parametros
+       this.ataque = ataque;    //Nivel de ataque del soldado
+       this.defensa = defensa;  //Nivel de defensa del soldado
+       this.vida = vida;        //Nivel de vida del soldado
+       this.estado=false;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getDefensa() {
+        return defensa;
+    }
+
+    public void setDefensa(int defensa) {
+        this.defensa = defensa;
+    }
+
+    public int getAtaque() {
+        return ataque;
+    }
+
+    public void setAtaque(int ataque) {
+        this.ataque = ataque;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+}
